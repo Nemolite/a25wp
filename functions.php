@@ -193,3 +193,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Тестовые функции
+
+function a25_test() {
+	global $wpdb;
+	$newtable = $wpdb->get_results( "SELECT * FROM sendmail" );
+    print_r($newtable);
+    echo $newtable[0]->name;
+}
+

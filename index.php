@@ -14,7 +14,14 @@
 
 get_header();
 ?>
+<?php
+$newtable = $wpdb->get_results( "SELECT * FROM sendmail" );
+print_r($newtable);
+echo $newtable[0]->name;
 
+a25_test();
+
+?>
 		<div class="content">
       <div class="content_top">
         <div class="row">
@@ -102,30 +109,10 @@ get_header();
          </div>
      </div> <!-- class="content_main" -->   
      
-     <div class="content_form">
-        <h2>Заказть</h2>
-   <form action="" name="name_form" enctype="multipart/form-data" method="POST">
-         
-  <div class="form-group">
     
-    <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Имя" />
-
-    <input type="tel" name="phone" class="form-control" id="exampleInputEmail1" placeholder="Телефон">
-
-    <input type="email" name="mail" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
-  </div>
-  
-
-   <input class="btn btn-default fix-btn" type="button" onclick="ajax_transport_to_server()" value="Отправить">
- 
-    <div id="result"></div>
-
-     </form>
-
-
-     </div><!-- class="content_form" -->
-
-
+<?php
+    get_template_part( 'template-parts/content', 'form' );
+?>	
 
     </div><!-- class="content" -->
 
