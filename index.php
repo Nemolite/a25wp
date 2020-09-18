@@ -284,16 +284,7 @@ get_header();
      
     </h1>
 	<?php echo ot_get_option( 'welcome_textarea' );?>
-	<!--
-     <p>
-Мы рады приветствовать Вас на официальном сайте <span> МБДОУ "Детский сад №15 "Сказка" города Шумерля Чувашской Республики.</span> Здесь вы всегда найдете свежие новости о жизни  любимых детишек в нашем детском саде. Для родителей имеется много полезной информации, множество ссылок на интересные ресурсы. Также здесь мы размещаем информацию о наших мероприятиях, о наших публикациях в СМИ. У нас имеется чудесная фотогалерея с нашими прекрасными детьми. 
 
-    </p>
-
-        <p>
-На сайте можно посетить странички групп и перейти на сайты наших педагогов. Также можете ознакомиться со всей документацией регламентирующей деятельность детского сада 
-    </p>
--->
     <p class="statment">
       <?php echo ot_get_option( 'footer_welcome_text' );?>
     </p>
@@ -305,56 +296,57 @@ get_header();
     
 </div>  <!-- class="content_wlecome" -->
 
+<!-- Верхний ряд банеров, сделаны на Option Tree (см. в thema-option.php папка template-parts)-->
 <div class="content_main-baners">
   
-  <a href="http://www.kremlin.ru/events/president/news/62582#sel=1:3:hgx,1:9:GDp" target="_blank">
+  <a href="<?php echo ot_get_option( 'main_top_link_1' );?>" target="_blank">
  <div class="baner-inner">
      <div class="baner-inner_img">
-       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/prezident.jpeg" alt="">
+       <img src="<?php echo ot_get_option( 'main_top_baner_1' );?>" alt="">
      </div>
       <div class="baner-inner_text">
-       <p>Послание Президента России Федеральному Собранию</p>
+       <p><?php echo ot_get_option( 'main_top_text_1' );?></p>
      </div>
  </div>
  </a>
   </a>
-  <a href="http://obrazov.cap.ru/action/activity/sobitiya/events-2018-year/ispolnenie-ukazov-prezidenta-rossii-ot-7-maya-2012" target="_blank" >
+  <a href="<?php echo ot_get_option( 'main_top_link_2' );?>" target="_blank" >
  <div class="baner-inner">
    <div class="baner-inner_img">
-       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/ukaz2.jpg" alt="">
+       <img src="<?php echo ot_get_option( 'main_top_baner_2' );?>" alt="">
      </div>
       <div class="baner-inner_text">
-       <p>Исполнение указов Президента России от 7 мая 2012 года № 597, 599</p>
+       <p><?php echo ot_get_option( 'main_top_text_2' );?></p>
      </div>
  </div>
  </a>
- <a href="https://edu.gov.ru/about/" target="_blank">
+ <a href="<?php echo ot_get_option( 'main_top_link_3' );?>" target="_blank">
  <div class="baner-inner">
       <div class="baner-inner_img">
-       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/logo.png" alt="">
+       <img src="<?php echo ot_get_option( 'main_top_baner_3' );?>" alt="">
      </div>
       <div class="baner-inner_text">
-       <p>Министерство просвещения Российской Федерации</p>
+       <p><?php echo ot_get_option( 'main_top_text_3' );?></p>
      </div>
  </div>
 
-  <a href="http://obrazov.cap.ru/" target="_blank">
+  <a href="<?php echo ot_get_option( 'main_top_link_4' );?>" target="_blank">
  <div class="baner-inner">
    <div class="baner-inner_img">
-       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/logo_minobr.png" alt="">
+       <img src="<?php echo ot_get_option( 'main_top_baner_4' );?>" alt="">
      </div>
       <div class="baner-inner_text">
-       <p>Министерство образования и молодежной политики Чувашской Республики</p>
+       <p><?php echo ot_get_option( 'main_top_text_4' );?></p>
      </div>
  </div>
  </a>
-  <a href="http://www.obrazov-gshum.edu21.cap.ru/?t=eduid&eduid=1199" target="_blank">
+  <a href="<?php echo ot_get_option( 'main_top_link_5' );?>" target="_blank">
  <div class="baner-inner">
    <div class="baner-inner_img">
-       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/shumer.gif" alt="">
+       <img src="<?php echo ot_get_option( 'main_top_baner_5' );?>" alt="">
      </div>
       <div class="baner-inner_text">
-       <p>Отдел образования молодежной и социальной политики г.Шумерля</p>
+       <p><?php echo ot_get_option( 'main_top_text_5' );?></p>
      </div>
  </div>
  </a>
@@ -497,7 +489,14 @@ get_header();
 
 </div><!-- class="content_photo"" -->
 
+<!-- Средние банеры -->
+
 <div class="baners-net">
+
+<?php
+	if ( function_exists('dynamic_sidebar') )
+		dynamic_sidebar('sidebar-middle-baners');
+?>
 
  <a href="https://www.who.int/ru/" target="_blank">
  <div class="baner-inner">
