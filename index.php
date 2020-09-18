@@ -9,112 +9,802 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package a25
+ * @package ds15
  */
 
 get_header();
 ?>
-<?php
-$newtable = $wpdb->get_results( "SELECT * FROM sendmail" );
-print_r($newtable);
-echo $newtable[0]->name;
+	<div class="main">
+		<header class="main__head">
 
-a25_test();
-
-?>
-		<div class="content">
-      <div class="content_top">
-        <div class="row">
-           <div class="col-md-6">
-             <div class="content_top-slider">
-               <div class="slider-text">
-                 <h1>
-                  Увеличили CTR на 235% <br />за 14 дней
-                 </h1>
-                 <p>
-                  Комплексный аудит вашего сайта легкий способ повысить позиции
-                 </p>
-               </div>
-               <div class="slider-text">
-                   <h1>
-                  Увеличили CTR на 235% <br />за 14 дней
-                 </h1>
-                 <p>
-                  Комплексный аудит вашего сайта легкий способ повысить позиции
-                 </p>
-               </div>
-               <div class="slider-text">
-                   <h1>
-                  Увеличили CTR на 235% <br />за 14 дней
-                 </h1>
-                 <p>
-                  Комплексный аудит вашего сайта легкий способ повысить позиции
-                 </p>
-               </div>
-             </div>
-           </div>
-           <div class="col-md-6">
-             <div class="content_top-image">
-               <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/dZZUk_croper_ru.jpeg" alt="">
-             </div>
-
-           </div>
-        </div> <!-- class="row" -->
-      </div> <!-- class="content_top" -->
-      
-     <div class="content_main">
-         <div class="row">
-           <div class="col-md-6">
-             <div class="info-text">
-               <h1>
-                 Почему мы
-               </h1>
-               <p>
-                 А25 — крупное интернет-агентство, основанное в 1997 году, которое специализируется на создании и продвижении сайтов и интернет-магазинов, SEO, оптимизация быстродействия сайтов. С 25 октября 2006 года командой А25 (тогда еще А25 работала как веб-студия по созданию простых сайтов и интернет-магазинов, не специализируясь на сложных разработках) реализовано более 3525 долгосрочных проектов.
-               </p>
-               <p>
-В портфолио А25: редизайн сайтов и интернет-магазинов на UMI.CMS: подключение нового отрисованного дизайна на сайт без нарушения работы основного функционала (как на тестовом сервере для разработки, так и на основном сервере); адаптация сайта под мобильную версию: доработка существующего дизайна для удобного и приятного представления сайта на разных устройствах. Кейсы по интернет-маркетингу включают следующие группы реализованных проектов: настройка контроля продаж и комплексной аналитики для интернет-магазина: подключение AMO CRM для прозрачной организации процесса продаж, подключение системы комплексной аналитики Roistat для контроля влияния различных каналов привлечения трафика на продажи и для экономии рекламного бюджета.
-</p>
-               <p>
-Кейсы А25 по SEO и поисковому продвижению сайтов: выведение сайтов в ТОП по сложным поисковым запросам, вывод сайтов из-под санкций, возврат поисковых позиций после переделки сайта. Кейсы по технической оптимизации сайта онлайн: оптимизация и ускорение отклика сайтов на UMI.CMS; уменьшение времени загрузки страницы, уменьшения нагрузки на сервер, оптимизация структуры данных UMI.CMS, очистка от накопившегося мусора, корректный переезд на другой хостинг. Кейсы по ускорению сайта и наличию адаптивной версии: оптимизация сайтов по критериям Google PageSpeed, приведение сайтов в максимально возможное соответствие требованиям Google PageSpeed (как в мобильной, так и в стационарной версии).
-</p>
-               <p>
-Кейсы по разработке сервисов и инcтрументов: разработка персонального логистического инструмента для руководителя компании и менеджеров на основе Яндекс.Маршрутов: построение маршрутов по заранее заданным в базе точкам, расчет наиболее оптимальных маршрутов, сохранение избранных маршрутов, печать маршрутного листа.
-
-               </p>
-             </div>
-
-           </div>
-           <div class="col-md-6">
-             <div class="info-text">
-                <h1>
-                 Отзывы
-               </h1>
-               <p>
-                Официальный дилер автомобилей Skoda Автогамма благодарит интернет-агентство А25 www.avto-gamma.ru за продвижение и развитие сайта. Мы очень довольны результатами проделанной работы, о чем говорят прочные позиции нашего сайта в глазах целевой аудитории и увеличение числа покупок среди посетителей сайта.
-</p>
-               <p>
-Хочу поблагодарить компанию А25 за проделанную очень полезную работу. Теперь клиенту не надо звонить и предлагать варианты доставки - он сам их видит в корзине с расположением пунктов получения на карте и сам выбирает.
-</p>
-               <p>
-Автор статьи поскромничал, умолчав о том, что заказы клиентов автоматически поступают в модуль службы доставки СДЭК, остается подтвердить заказ нажатием одной кнопки и в результате создается готовая накладная, зарегистрированная в службе доставки. Клиент при отправке заказа создал документ для отправки. Сотруднику интернет магазина остается только сдать посылку.
-</p>
-               <p>
-Отдельное спасибо сотруднику компании А25 Александру Хигай и директору Владимиру Лапардину. В процессе настройки модуля они предложили и реализовали несколько полезных идей. Сервис стал лучше, клиенты интернет магазина довольны. Спасибо!
-
-               </p>
-             </div>
-
-           </div>
-         </div>
-     </div> <!-- class="content_main" -->   
-     
+	<nav class="navbar menu-color">
+     <div class="container-fluid">
     
-<?php
-    get_template_part( 'template-parts/content', 'form' );
-?>	
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed fix-btn-color" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
 
-    </div><!-- class="content" -->
+   
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	
+	    
+	
+	
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a class="link-color" id="hover-fix-color-top" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Группы детского сада<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="#">Группа №1 – «Дружные ребята»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №2 – «Смешарики»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №3 – «Зернышко»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №4 – «Гномики»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №5 – «Настоящие друзья»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №6 – «Улыбка»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №7 – «Ягодка»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №8 – «Капельки»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №9 – «Солнышко»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №10 – «Теремок»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №11 – «Кроха»</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Группа №12 – «Светлячки»</a></li>
+          </ul>
+
+        </li>
+         <li class="dropdown">
+          <a class="link-color" id="hover-fix-color-top" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Педагоги<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="http://edu21.cap.ru/home/3857/sait1/main.html" target="_blank">Сайт Морозовой Инны Анатольевны</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://sites.google.com/site/staruhinavala5/home" target="_blank">Сайт Старухиной Валентины Александровны</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://sites.google.com/site/pakseevaveraalekseevna/home" target="_blank">Сайт Паксеевой Веры Алексеевны</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://svetgoldps.wixsite.com/mysite" target="_blank">Сайт Пототовой Светланы Геннадьевны </a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://sites.google.com/site/ctvmzievthkz/" target="_blank">Сайт Озяковой Светланы Валерьевны</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="https://antsemtat9.wixsite.com/tatyanasemenova" target="_blank">Сайт Семеновой Татьяны Вячеславовны</a></li>
+          </ul>
+
+        </li>
+
+        <li class="dropdown">
+          <a class="link-color" id="hover-fix-color-top" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Работа логопеда<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="#">Артикуляционная гимнастика</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Консультация для родителей</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Массаж пальцев рук</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Развитие мелкой моторики</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Рекомендации по проведению <br /> упражнений артикуляционной гимнастики</a></li>
+            
+          </ul>
+
+        </li>
+
+         <li class="dropdown">
+          <a class="link-color" id="hover-fix-color-top" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Педагог-психолог<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="#">Артикуляционная гимнастика</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Консультация для родителей</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Массаж пальцев рук</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Развитие мелкой моторики</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Рекомендации по проведению <br /> упражнений артикуляционной гимнастики</a></li>
+            
+          </ul>
+
+        </li>
+
+      </ul>
+
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Что искать?" value="<?php echo get_search_query() ?>" name="s" id="s">
+        </div>
+        <button type="submit" class="btn btn-default">Найти</button>
+      </form>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#" id="hover-fix-color-top" >Версия для слабовидящих</a>
+        </li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> 
+		</header>
+		<div class="content">
+	    <div class="content_images">
+            <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/header2.jpeg" alt=""> 
+            <h1>
+			<?php echo ot_get_option( 'head_main_text' );?>
+			
+			</h1>
+    </div>
+
+
+<nav class="navbar middle-menu-color">
+  <div class="container-fluid">
+   
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed fix-btn-color-top" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+       <li class="dropdown">
+          <a class="link-color" id="hover-fix-color" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Сведения об образовательной <br /> организации<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="#">Основные сведения</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Структура и органы управления <br />образовательной организацией</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Документы</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Образование</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Образовательные стандарты</a></li>
+
+             <li role="separator" class="divider"></li>
+            <li><a href="#">Руководство. Педагогический <br /> (научно-педагогический) состав</a></li>
+
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Материально-техническое <br /> обеспечение и оснащенность <br />образовательного процесса</a></li>
+
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Степендии и иные виды<br /> материальной поддержки</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Платные образовательные услуги</a></li>
+            
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Финансово-хозяйственная <br />деятельность</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Вакантные места для <br />приема ( перевода)</a></li>
+          </ul>
+
+        </li>
+
+          <li class="dropdown">
+          <a class="link-color" id="hover-fix-color" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ждем новичков<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="#">Показатели познавательного<br /> развития ребёнка раннего<br /> возраста</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Рекомендации родителям</a></li>
+          
+          </ul>
+
+        </li>
+
+          <li class="dropdown">
+          <a class="link-color" id="hover-fix-color" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Растим детей умными,<br /> творческими, здоровыми<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="#">Дидактические игры<br /> по математике</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Развитие детей</a></li>
+          
+          </ul>
+
+        </li>
+
+           <li class="dropdown">
+          <a class="link-color" id="hover-fix-color" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Новые формы поддержки <br /> семей с детьми<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="#">Дидактические игры<br /> по математике</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Развитие детей</a></li>
+          
+          </ul>
+
+         </li>
+
+
+           <li class="dropdown">
+          <a class="link-color" id="hover-fix-color" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Для пап и мам<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a href="#">Детская литература</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Обязанности родителй</a></li>
+             <li role="separator" class="divider"></li>
+            <li><a href="#">Работа с семьей</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Советы психолога</a></li>
+          
+          </ul>
+
+         </li>
+
+           <li><a class="link-color" id="hover-fix-color" href="#">Семейный клуб <br/> "Сближение"</a></li>
+         
+      </ul>
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="content_wlecome">
+
+ <div class="row">
+  <div class="col-md-4 col-sm-4 col-xs-6">
+       <div class="welcome_images">
+          <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/topmanager.jpg" alt=""> 
+       </div>
+  </div>
+  <div class="col-md-8 col-sm-8 col-xs-6">
+        <div class="welcome_text">
+      <h1>
+	   <?php echo ot_get_option( 'head_welcome_text' );?>
+     
+    </h1>
+	<?php echo ot_get_option( 'welcome_textarea' );?>
+	<!--
+     <p>
+Мы рады приветствовать Вас на официальном сайте <span> МБДОУ "Детский сад №15 "Сказка" города Шумерля Чувашской Республики.</span> Здесь вы всегда найдете свежие новости о жизни  любимых детишек в нашем детском саде. Для родителей имеется много полезной информации, множество ссылок на интересные ресурсы. Также здесь мы размещаем информацию о наших мероприятиях, о наших публикациях в СМИ. У нас имеется чудесная фотогалерея с нашими прекрасными детьми. 
+
+    </p>
+
+        <p>
+На сайте можно посетить странички групп и перейти на сайты наших педагогов. Также можете ознакомиться со всей документацией регламентирующей деятельность детского сада 
+    </p>
+-->
+    <p class="statment">
+      <?php echo ot_get_option( 'footer_welcome_text' );?>
+    </p>
+
+
+       </div>
+  </div>
+</div>
+    
+</div>  <!-- class="content_wlecome" -->
+
+<div class="content_main-baners">
+  
+  <a href="http://www.kremlin.ru/events/president/news/62582#sel=1:3:hgx,1:9:GDp" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/prezident.jpeg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Послание Президента России Федеральному Собранию</p>
+     </div>
+ </div>
+ </a>
+  </a>
+  <a href="http://obrazov.cap.ru/action/activity/sobitiya/events-2018-year/ispolnenie-ukazov-prezidenta-rossii-ot-7-maya-2012" target="_blank" >
+ <div class="baner-inner">
+   <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/ukaz2.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Исполнение указов Президента России от 7 мая 2012 года № 597, 599</p>
+     </div>
+ </div>
+ </a>
+ <a href="https://edu.gov.ru/about/" target="_blank">
+ <div class="baner-inner">
+      <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/logo.png" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Министерство просвещения Российской Федерации</p>
+     </div>
+ </div>
+
+  <a href="http://obrazov.cap.ru/" target="_blank">
+ <div class="baner-inner">
+   <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/logo_minobr.png" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Министерство образования и молодежной политики Чувашской Республики</p>
+     </div>
+ </div>
+ </a>
+  <a href="http://www.obrazov-gshum.edu21.cap.ru/?t=eduid&eduid=1199" target="_blank">
+ <div class="baner-inner">
+   <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/shumer.gif" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Отдел образования молодежной и социальной политики г.Шумерля</p>
+     </div>
+ </div>
+ </a>
+
+</div> <!-- class="content_main-baners" -->
+
+
+   
+<div class="content_slider">
+  <h1>Новости нашего десткого сада</h1>
+  <div class="owl-carousel">
+    <a href="#">
+  <div class="item-news">
+      <div class="item-news_img">
+        <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/news1.jpg" alt=""> 
+      </div>
+      <div class="item-news_info">
+         <h3>Любим тебя, наш город!</h3>
+         <p>Дата пуликации <span>07.09.2020</span></p>
+         <p> Воспитанники МБДОУ «Детский сад № 15 «Сказка» поздравляют всех жителей  с Днем города! <span>Читать далее</span></p>
+      </div>
+      
+ </div>
+</a>
+
+  <a href="#">
+  <div class="item-news">
+      <div class="item-news_img">
+        <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/news2.jpg" alt=""> 
+      </div>
+      <div class="item-news_info">
+         <h3>На Сурском оборонительном рубеже</h3>
+         <p>Дата пуликации <span>07.09.2020</span></p>
+         <p>  1 сентября в  День знаний в МБДОУ «Детский сад №15 «Сказка» в дежурной группе прошло занятие «Урок мужества» <span>Читать далее</span></p>
+      </div>
+      
+ </div>
+</a>
+
+<a href="#">
+  <div class="item-news">
+      <div class="item-news_img">
+        <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/news3.jpg" alt=""> 
+      </div>
+      <div class="item-news_info">
+         <h3>Безопасность в нашей жизни</h3>
+         <p>Дата пуликации <span>20.08.2020</span></p>
+         <p>Человеческая жизнь сложна и многогранна, часто радости пересекаются с неприятностями  и идут рядом.   <span>Читать далее</span></p>
+      </div>
+      
+ </div>
+</a>
+
+<a href="#">
+  <div class="item-news">
+      <div class="item-news_img">
+        <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/new4.jpg" alt=""> 
+      </div>
+      <div class="item-news_info">
+         <h3>ДЕНЬ СЕМЬИ, ЛЮБВИ И ВЕРНОСТИ</h3>
+         <p>Дата пуликации <span>08.07.2020</span></p>
+         <p>Ежегодно 8 июля в нашей стране отмечается Всероссийский день семьи, любви и верности. <span>Читать далее</span></p>
+      </div>
+      
+ </div>
+</a>
+  
+</div> <!-- class="owl-carousel" -->
+
+</div> <!-- class="content_slider" -->
+<a href="#">
+ <div class="btn-news">
+    <p>Все новости</p>
+ </div>
+</a>
+
+<div class="content_photo">
+  <h1>Наша фотогалерея</h1>
+
+  <div class="photo-galery">
+    <div class="photo-single">
+
+        <div class="fix-size">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_1' );?>" alt="">
+        </div>
+        <div class="fix-size">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_2' );?>" alt="">
+        </div>
+        <div class="fix-size">
+           <img src="<?php echo ot_get_option( 'main_slider_upload_3' );?>" alt="">
+        </div>
+        <div class="fix-size">
+           <img src="<?php echo ot_get_option( 'main_slider_upload_4' );?>" alt="">
+        </div>
+        <div class="fix-size">
+           <img src="<?php echo ot_get_option( 'main_slider_upload_5' );?>" alt="">
+        </div>
+        <div class="fix-size">
+           <img src="<?php echo ot_get_option( 'main_slider_upload_6' );?>" alt="">
+        </div>
+		<div class="fix-size">
+           <img src="<?php echo ot_get_option( 'main_slider_upload_7' );?>" alt="">
+        </div>
+		<div class="fix-size">
+           <img src="<?php echo ot_get_option( 'main_slider_upload_8' );?>" alt="">
+        </div>
+    
+    </div><!-- class="photo-single" -->  
+
+ <div class="photo-array">
+        <div class="array-item">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_1' );?>" alt="">
+        </div>
+         <div class="array-item">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_2' );?>" alt="">
+        </div>
+        <div class="array-item">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_3' );?>" alt="">
+        </div>
+         <div class="array-item">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_4' );?>" alt="">
+        </div>
+   
+        <div class="array-item">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_5' );?>" alt="">
+        </div>
+         <div class="array-item">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_6' );?>" alt="">
+        </div>
+        <div class="array-item">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_7' );?>" alt="">
+        </div>
+         <div class="array-item">
+          <img src="<?php echo ot_get_option( 'main_slider_upload_8' );?>" alt="">
+        </div>
+  </div> <!-- class="photo-array" -->
+
+
+  </div><!-- class="photo-galery"-->
+
+</div><!-- class="content_photo"" -->
+
+<div class="baners-net">
+
+ <a href="https://www.who.int/ru/" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/voz2.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Всемирная организация здравоохранения</p>
+     </div>
+ </div>
+ </a>
+ <a href="https://git21.rostrud.gov.ru/" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/logo-prime.png" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Государственная инспекция труда в Чувашской Республике</p>
+     </div>
+ </div>
+ </a>
+ <a href="http://gov.cap.ru/home/76/2010/blagoustroistvo/stranisa/index.htm" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/blagoshum.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Благоустройство города Шумерля</p>
+     </div>
+ </div>
+ </a>
+ <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/att21.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Аттестация педагогических работников</p>
+     </div>
+ </div>
+ </a>
+ <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/dlavas.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Для Вас, родители</p>
+     </div>
+ </div>
+ </a>
+ <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/infobes.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Информационная безопасность и защита информации</p>
+     </div>
+ </div>
+ </a>
+ <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/img01.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Порядок действий при пожаре</p>
+     </div>
+ </div>
+ </a>
+ <a href="http://old-gshum.cap.ru/sitemap.aspx?id=1989593" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/ter.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Профилактика терроризма</p>
+     </div>
+ </div>
+ </a>
+ <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/netcor.png" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Антикоррупционная деятельность</p>
+     </div>
+ </div>
+ </a>
+ <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/poder.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Новые формы поддержки семей с детьми</p>
+     </div>
+ </div>
+ </a>
+ <a href="https://www.ya-roditel.ru/" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/logo-rod.png" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Сайт для пап и мам</p>
+     </div>
+ </div>
+ </a>
+ <a href="https://www.spas-extreme.ru/" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/ehkstrim.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Портал детской безопасности МЧС России</p>
+     </div>
+ </div>
+ </a>
+  <a href="http://old-mintrans.cap.ru/sitemap.aspx?id=1990386" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/besopasnost.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Безопасность дорожного движения</p>
+     </div>
+ </div>
+ </a>
+  <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/banpit.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Организация питания в детском саду</p>
+     </div>
+ </div>
+ </a>
+   <a href="http://www.garant.ru/actual/421242/" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/bez_int.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Защита детей от информации, причиняющей вред их здоровью и развитию</p>
+     </div>
+ </div>
+ </a>
+
+
+
+</div>	<!-- class="baners-net" -->
+
+<div class="on-the-map">
+  <h1>Наш детский сад на карте</h1>
+  <div class="map_inner">
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A85cd938b1b904ed91e24eaba262e7e74c69e11392cb31bd5225f8e0ef5068cb2&amp;width=100%25&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+  </div> 
+</div>	<!-- class="on-the-map" -->		
+
+<div class="dop-baners">
+  <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/punkt_konsultacionnyj.png" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Консультатционный пункт "СКАЗКА"</p>
+     </div>
+ </div>
+ </a> 
+
+   <a href="http://gkchs.cap.ru/action/activity/sostoyanie-zaschiti-naseleniya-i-territorij-ot-chr/detskaya-bezopasnostj" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/azbes.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Детская безопасность</p>
+     </div>
+ </div>
+ </a> 
+
+    <a href="http://www.cap.ru/events/events/2020-god/yanvarj/2020-god-god-pamyati-i-slavi" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/pam.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>2020 год – Год памяти и славы</p>
+     </div>
+ </div>
+ </a> 
+
+  <a href="http://chebobraz.cap.ru/sitemap.aspx?id=2122101" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/opeka.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Право ребенка на защиту</p>
+     </div>
+ </div>
+ </a> 
+
+  <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/img202.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Независимая оценка качества образования</p>
+     </div>
+ </div>
+ </a>
+
+   <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/profban.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Я в профсоюзе</p>
+     </div>
+ </div>
+ </a>
+
+   <a href="#" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/dostup.jpeg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Доступность образовательных услуг для инвалидов и детей с ОВЗ</p>
+     </div>
+ </div>
+ </a>
+
+   <a href="http://pfo.gov.ru/" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/polpred.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Полномочный представитель Президента РФ в Приволжском федеральном округе</p>
+     </div>
+ </div>
+ </a>
+    <a href="http://xn--21-dlcie3di0l.xn--p1ai/category/doshkolyonok/" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/placeholder-image-1.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Шумерлинская общественно-политическая газета «Вперед»</p>
+     </div>
+ </div>
+ </a>
+    <a href="http://xn--80aalcbc2bocdadlpp9nfk.xn--d1acj3b/" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/presondani.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Защита персональных данных</p>
+     </div>
+ </div>
+ </a>
+  <a href="http://sad.edu.cap.ru/" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/elektr_ochered.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Портал образовательных услуг</p>
+     </div>
+ </div>
+ </a>
+
+  <a href="http://old-medicin.cap.ru/sitemap.aspx?id=1298673" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/psiholog.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Психологическая служба Чувашии</p>
+     </div>
+ </div>
+ </a>
+
+  <a href="http://chebobraz.cap.ru/sitemap.aspx?id=1864667" target="_blank">
+ <div class="baner-inner">
+     <div class="baner-inner_img">
+       <img src="<?php echo bloginfo('template_url'); ?>/vendor/images/deti.jpg" alt="">
+     </div>
+      <div class="baner-inner_text">
+       <p>Электронные образовательные ресурсы</p>
+     </div>
+ </div>
+ </a>
+</div><!-- class="dop-baners" -->
+</div><!-- class="content" -->
+
+
 
 <?php
 //get_sidebar();

@@ -1,18 +1,47 @@
 <?php
 /**
- * a25 functions and definitions
+ * ds15 functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package a25
+ * @package ds15
  */
+
+// Подключение плагина OptionTree
+/**
+ * Required: set 'ot_theme_mode' filter to true.
+ */
+add_filter( 'ot_theme_mode', '__return_true' );
+// Убираем лишнее из настроеек
+add_filter( 'ot_show_new_layout', '__return_false' );
+//Для консоли админки 
+add_filter( 'ot_show_pages', '__return_true' );
+
+/**
+ * Required: include OptionTree.
+ * Подключение самого плагина в режиме разрабоки
+ */
+require( trailingslashit( get_template_directory() ) . '/option-tree/ot-loader.php' );
+// Подключение файлов настрйоки Option Tree
+require( trailingslashit( get_template_directory() ) . '/template-parts/meta-boxes.php' );
+require( trailingslashit( get_template_directory() ) . '/template-parts/theme-options.php' );
+
+// В админке будут настройки OpPtionTree
+function theme_options_parent($parent ) {
+	$parent = '';
+	return $parent;
+}
+add_filter( 'ot_theme_options_parent_slug', 'theme_options_parent',20 );
+
+
+// Основное
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
 }
 
-if ( ! function_exists( 'a25_setup' ) ) :
+if ( ! function_exists( 'ds15_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -20,14 +49,14 @@ if ( ! function_exists( 'a25_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function a25_setup() {
+	function ds15_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on a25, use a find and replace
-		 * to change 'a25' to the name of your theme in all the template files.
+		 * If you're building a theme based on ds15, use a find and replace
+		 * to change 'ds15' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'a25', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'ds15', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +79,8 @@ if ( ! function_exists( 'a25_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'a25' ),
+				
+				'top-menu' => esc_html__( 'one', 'ds15topmenu' ),
 			)
 		);
 
@@ -75,7 +105,7 @@ if ( ! function_exists( 'a25_setup' ) ) :
 		add_theme_support(
 			'custom-background',
 			apply_filters(
-				'a25_custom_background_args',
+				'ds15_custom_background_args',
 				array(
 					'default-color' => 'ffffff',
 					'default-image' => '',
@@ -100,9 +130,10 @@ if ( ! function_exists( 'a25_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
 	}
 endif;
-add_action( 'after_setup_theme', 'a25_setup' );
+add_action( 'after_setup_theme', 'ds15_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -111,22 +142,25 @@ add_action( 'after_setup_theme', 'a25_setup' );
  *
  * @global int $content_width
  */
-function a25_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'a25_content_width', 640 );
+function ds15_content_width() {
+	// This variable is intended to be overruled from themes.
+	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+	$GLOBALS['content_width'] = apply_filters( 'ds15_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'a25_content_width', 0 );
+add_action( 'after_setup_theme', 'ds15_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function a25_widgets_init() {
+function ds15_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'a25' ),
+			'name'          => esc_html__( 'Sidebar', 'ds15' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'a25' ),
+			'description'   => esc_html__( 'Add widgets here.', 'ds15' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -134,37 +168,42 @@ function a25_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'a25_widgets_init' );
+add_action( 'widgets_init', 'ds15_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function a25_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri(), array(), _S_VERSION );
+function ds15_scripts() {
+	wp_enqueue_style( 'ds15-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'ds15bootstrap', get_template_directory_uri() . '/vendor/css/bootstrap.css', array(), _S_VERSION );
+	wp_enqueue_style( 'ds15bootstraptheme', get_template_directory_uri() . '/vendor/css/bootstrap-theme.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'ds15owlcarouselmin', get_template_directory_uri() . '/vendor/css/owl.carousel.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'ds15owlthemedefaultmin', get_template_directory_uri() . '/vendor/css/owl.theme.default.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'ds15slick', get_template_directory_uri() . '/vendor/slick/slick.css', array(), _S_VERSION );
+	wp_enqueue_style( 'ds15slicktheme', get_template_directory_uri() . '/vendor/slick/slick-theme.css', array(), _S_VERSION );
+	wp_enqueue_style( 'ds15stylename', get_template_directory_uri() . '/vendor/css/stylename.css', array(), _S_VERSION );
+	wp_enqueue_style( 'ds15style', get_template_directory_uri() . '/vendor/css/style.css', array(), _S_VERSION );
+		
 	
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/vendor/css/bootstrap.css', array(), _S_VERSION);
-	wp_enqueue_style( 'bootstraptheme', get_template_directory_uri() . '/vendor/css/bootstrap-theme.min.css', array(), _S_VERSION);
-	wp_enqueue_style( 'owlcarouselmap', get_template_directory_uri() . '/vendor/css/owl.carousel.min.css', array(), _S_VERSION);
-	wp_enqueue_style( 'owltheme', get_template_directory_uri() . '/vendor/css/owl.theme.default.min.css', array(), _S_VERSION);
-	wp_enqueue_style( 'slick', get_template_directory_uri() . '/vendor/slick/slick.css', array(), _S_VERSION);
-	wp_enqueue_style( 'slicktheme', get_template_directory_uri() . '/vendor/slick/slick-theme.css', array(), _S_VERSION);
-	wp_enqueue_style( 'stylename', get_template_directory_uri() . '/vendor/css/stylename.css', array(), _S_VERSION);
-	wp_enqueue_style( 'stylemain', get_template_directory_uri() . '/vendor/css/style.css', array(), _S_VERSION);
-	
-	wp_style_add_data( 'style', 'rtl', 'replace' );
+	wp_style_add_data( 'ds15-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'ds15-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'jquery2', get_template_directory_uri() . '/vendor/js/jquery-3.4.1.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/vendor/js/bootstrap.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'owljs', get_template_directory_uri() . '/vendor/js/owl.carousel.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'slickjs', get_template_directory_uri() . '/vendor/slick/slick.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'mainjs', get_template_directory_uri() . '/vendor/js/main.js', array(), _S_VERSION, true );
 
+
+
+
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'a25_scripts' );
+add_action( 'wp_enqueue_scripts', 'ds15_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -193,12 +232,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// Тестовые функции
 
-function a25_test() {
-	global $wpdb;
-	$newtable = $wpdb->get_results( "SELECT * FROM sendmail" );
-    print_r($newtable);
-    echo $newtable[0]->name;
+/**
+ * Register Custom Navigation Walker
+ */
+function register_navwalker(){
+	require_once get_template_directory() . '/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php';
 }
+
+
+
 
